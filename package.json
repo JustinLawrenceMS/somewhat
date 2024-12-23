@@ -1,0 +1,29 @@
+{
+  "name": "somewhat-effective",
+  "version": "1.0.0",
+  "description": "helper that allows you to wildcard search recursively through a large js object such as window or document",
+  "main": "SomewhatEffective.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npx jest --config jest.config.js __tests__"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustinLawrenceMS/somewhat-effective.git"
+  },
+  "keywords": [
+    "search object",
+    "object enumeration"
+  ],
+  "author": "Justin Lawrence, MS",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/JustinLawrenceMS/somewhat-effective/issues"
+  },
+  "homepage": "https://github.com/JustinLawrenceMS/somewhat-effective#readme",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
