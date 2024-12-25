@@ -2,7 +2,8 @@
   "name": "somewhat",
   "version": "1.0.0",
   "description": "helper that allows you to wildcard search recursively through a large js object such as window or document",
-  "main": "Somewhat.js",
+  "main": "dist/cjs/SomewhatEffective.js",
+  "module": "dist/esm/SomewhatEffective.js", 
   "directories": {
     "test": "test"
   },
