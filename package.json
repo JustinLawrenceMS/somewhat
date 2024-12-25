@@ -1,8 +1,8 @@
 {
-  "name": "somewhat-effective",
+  "name": "somewhat",
   "version": "1.0.0",
   "description": "helper that allows you to wildcard search recursively through a large js object such as window or document",
-  "main": "SomewhatEffective.js",
+  "main": "Somewhat.js",
   "directories": {
     "test": "test"
   },
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JustinLawrenceMS/somewhat-effective.git"
+    "url": "git+https://github.com/JustinLawrenceMS/somewhat.git"
   },
   "keywords": [
     "search object",
@@ -20,9 +20,9 @@
   "author": "Justin Lawrence, MS",
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/JustinLawrenceMS/somewhat-effective/issues"
+    "url": "https://github.com/JustinLawrenceMS/somewhat/issues"
   },
-  "homepage": "https://github.com/JustinLawrenceMS/somewhat-effective#readme",
+  "homepage": "https://github.com/JustinLawrenceMS/somewhat#readme",
   "dependencies": {
     "jest": "^29.7.0"
   },

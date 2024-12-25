@@ -1,5 +1,5 @@
 /**
- * SomewhatEffective.js
+ * Somewhat.js
  * A helper for recursively searching through objects and DOM elements.
  * Officially created by Justin Lawrence, MS, but actually created by our chatbot overlords.
  * Licensed under the GNU General Public License v2.0.
