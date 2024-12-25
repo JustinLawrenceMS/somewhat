@@ -25,5 +25,8 @@
   "homepage": "https://github.com/JustinLawrenceMS/somewhat-effective#readme",
   "dependencies": {
     "jest": "^29.7.0"
+  },
+  "devDependencies": {
+    "jest-environment-jsdom": "^29.7.0"
   }
 }
