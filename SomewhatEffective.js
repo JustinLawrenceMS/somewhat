@@ -82,9 +82,9 @@ class Somewhat {
    * @returns {Array<{path: string, value: any}>} - Array of matching paths and values.
    */
   searchDOM(element, searchTerm = this.pattern, path = "") {
-    const results = [];
-
-    // Search element attributes
+    let results = [];
+  
+    // Search attributes
     if (element.attributes) {
       for (const attr of element.attributes) {
         const attrPath = `${path}@${attr.name}`;
@@ -96,25 +96,27 @@ class Somewhat {
         }
       }
     }
-
-    // Search element text content
-    if (
-      element.textContent &&
-      this.matchWithWildcard(element.textContent, searchTerm)
-    ) {
-      results.push({ path: `${path}.textContent`, value: element.textContent });
+  
+    // Search the node's content
+    if (element.textContent && element.textContent.trim()) {
+      const trimmedContent = element.textContent.trim();
+      if (this.matchWithWildcard(trimmedContent, searchTerm)) {
+        results.push({ path: `${path}.textContent`, value: trimmedContent });
+        return results; // Stop further traversal if a match is found in this node
+      }
     }
-
+  
     // Recursively search child nodes
-    element.childNodes.forEach((child, index) => {
-      results.push(
-        ...this.searchDOM(child, searchTerm, `${path}.childNodes[${index}]`)
-      );
-    });
-
+    if (element.children) {
+      Array.from(element.children).forEach((child, index) => {
+        const childPath = `${path}.children[${index}]`;
+        results = results.concat(this.searchDOM(child, searchTerm, childPath));
+      });
+    }
+  
     return results;
   }
-
+     
   /**
    * Searches the global `document` object for matches.
    * @param {string} [searchTerm=this.pattern] - The wildcard pattern to search for.
