@@ -1,4 +1,4 @@
-const Somewhat = require("../Somewhat.js");
+const Somewhat = require("../src/Somewhat.js");
 
 describe("Somewhat class tests", () => {
   let searcher;

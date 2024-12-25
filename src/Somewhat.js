@@ -4,7 +4,7 @@
  * Officially created by Justin Lawrence, MS, but actually created by our chatbot overlords.
  * Licensed under the GNU General Public License v2.0.
  */
-export default class Somewhat {
+class Somewhat {
   constructor(value = null, pattern = "") {
     this.value = value;
     this.pattern = pattern;
@@ -131,3 +131,5 @@ export default class Somewhat {
     return this.searchDOM(document, searchTerm);
   }
 }
+
+module.exports = Somewhat;
