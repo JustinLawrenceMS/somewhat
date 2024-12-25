@@ -11,7 +11,7 @@
 ## Installation
 
 ```bash
-npm install somewhat
+npm install https://github.com/JustinLawrenceMS/somewhat
 ```
 
 ## Usage
