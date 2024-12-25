@@ -131,5 +131,3 @@ export default class Somewhat {
     return this.searchDOM(document, searchTerm);
   }
 }
-
-module.exports = Somewhat;
