@@ -1,152 +1,103 @@
 # Somewhat
 
-`Somewhat` 
-
-## Features
-
-- Match keys and values in objects using wildcard patterns.
-- Search through DOM elements and their attributes.
-- Search the entire `document` for matching text or attributes.
+Somewhat is a lightweight utility package that simplifies wildcard searches in JavaScript objects, DOM elements, and JSON. This package is ideal for developers who need quick and effective searching capabilities in their applications.
 
 ## Installation
 
+Install the package via npm:
+
 ```bash
-npm install https://github.com/JustinLawrenceMS/somewhat
+npm install https://github.com/JustinLawrenceMS/somewhat 
 ```
 
 ## Usage
 
-### Import the Class
+### Importing the Package
+
+Use the following import statement in an ESModule-compatible environment:
 
 ```javascript
-const Somewhat = require('somewhat');
+import Somewhat from "somewhat";
 ```
 
-### Basic Example
+### Searching Objects
 
-#### Object Search
+You can use `Somewhat` to search JavaScript objects:
 
 ```javascript
+const searcher = new Somewhat();
 const obj = {
   a: "apple",
-  b: {
-    c: "cat",
-    d: "dog",
-  },
-  e: "elephant",
+  b: "banana",
+  c: "cherry",
 };
 
-const searcher = new Somewhat();
 const results = searcher.searchObject(obj, "a*");
 console.log(results);
 // Output: [ { path: "a", value: "apple" } ]
 ```
 
-#### DOM Search
+### Searching the DOM
+
+Search the DOM for elements matching a wildcard pattern:
 
 ```javascript
-// Example HTML
+// Assuming the DOM contains:
 // <div id="test-container">
 //   <p class="test-class">Hello, world!</p>
 //   <span data-attr="test">Some text</span>
 // </div>
 
-document.body.innerHTML = `
-  <div id="test-container">
-    <p class="test-class">Hello, world!</p>
-    <span data-attr="test">Some text</span>
-  </div>
-`;
-
-const results = searcher.searchDOM(document.body, "*class");
+const results = searcher.searchDOM(document.body, "*-attr");
 console.log(results);
-// Output: [ { path: ".children[0]@class", value: "test-class" } ]
+// Output: [ { path: ".children[0].children[1]@data-attr", value: "test" } ]
 ```
 
-#### Document Search
+### Searching JSON
+
+You can search JSON data using the same method as objects:
+
+```javascript
+const jsonData = {
+  a: "apple",
+  b: "banana",
+  nested: {
+    c: "cherry",
+  },
+};
+
+const results = searcher.searchObject(jsonData, "*berry");
+console.log(results);
+// Output: [ { path: "nested.c", value: "cherry" } ]
+```
+
+### Searching the Entire Document
+
+Search the entire document for text content matching a pattern:
 
 ```javascript
 const results = searcher.searchDocument("*world*");
 console.log(results);
-// Output: [ { path: ".children[0].children[0].textContent", value: "Hello, world!" } ]
+// Output: [ { path: ".children[0].textContent", value: "Hello, world!" } ]
 ```
-
-### Match with Wildcards
-
-```javascript
-console.log(searcher.matchWithWildcard("apple", "a*")
-// Output: true
-
-console.log(searcher.matchWithWildcard("banana", "*na")
-// Output: true
-
-console.log(searcher.matchWithWildcard("grape", "*ap*")
-// Output: true
-```
-
-## API
-
-### `matchWithWildcard(value, pattern)`
-
-Matches a string value against a wildcard pattern where:
-- `*` matches any number of characters.
-- `?` matches a single character.
-
-**Parameters:**
-- `value` (string): The value to match.
-- `pattern` (string): The wildcard pattern to match against.
-
-**Returns:**
-- `boolean`: `true` if the value matches the pattern, `false` otherwise.
-
-### `searchObject(obj, searchTerm, path = "", visited = new Set())`
-
-Recursively searches an object for keys or values that match a wildcard pattern.
-
-**Parameters:**
-- `obj` (object): The object to search.
-- `searchTerm` (string): The wildcard pattern to match.
-- `path` (string): Current traversal path (used internally).
-- `visited` (Set): Tracks visited nodes to prevent circular references.
-
-**Returns:**
-- `Array`: An array of objects with matching paths and values.
-
-### `searchDOM(element, searchTerm, path = "")`
-
-Recursively searches a DOM element and its children for matching attributes or text content.
-
-**Parameters:**
-- `element` (HTMLElement): The DOM element to search.
-- `searchTerm` (string): The wildcard pattern to match.
-- `path` (string): Current traversal path (used internally).
-
-**Returns:**
-- `Array`: An array of objects with matching paths and values.
-
-### `searchDocument(searchTerm)`
-
-Searches the entire `document` for matching attributes or text content.
-
-**Parameters:**
-- `searchTerm` (string): The wildcard pattern to match.
-
-**Returns:**
-- `Array`: An array of objects with matching paths and values.
 
 ## Testing
 
-The project includes unit tests written with [Jest](https://jestjs.io/). To run the tests:
+Run the tests using Jest:
 
 ```bash
 npm test
 ```
 
-## Contributing
+## Build
 
-Contributions are welcome! Feel free to fork the repository and submit a pull request.
+To build the package for both CommonJS and ESM:
+
+```bash
+npm run build
+```
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+This project is licensed under the MIT License. See the LICENSE file for details.
 
