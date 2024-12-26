@@ -66,7 +66,7 @@ const jsonData = {
   },
 };
 
-const results = searcher.searchObject(jsonData, "*berry");
+const results = searcher.searchObject(jsonData, "*erry");
 console.log(results);
 // Output: [ { path: "nested.c", value: "cherry" } ]
 ```
