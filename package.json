@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "helper that allows you to wildcard search recursively through a large js object such as window or document",
   "main": "src/cjs/Somewhat.js",
-  "module": "dist/esm/Somewhat.js",
+  "module": "src/esm/Somewhat.js",
   "directories": {
     "test": "test"
   },
