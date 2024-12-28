@@ -7,7 +7,7 @@ Somewhat is a lightweight utility package that simplifies wildcard searches in J
 Install the package via npm:
 
 ```bash
-npm install https://github.com/JustinLawrenceMS/somewhat 
+npm install --save-dev https://github.com/JustinLawrenceMS/somewhat 
 ```
 
 ## Usage
