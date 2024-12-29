@@ -2,6 +2,14 @@
 
 Somewhat is a lightweight utility package that simplifies wildcard searches in JavaScript objects, DOM elements, and JSON. This package is ideal for developers who need quick and effective searching capabilities in their applications.
 
+![npm version](https://img.shields.io/npm/v/somewhat) ![MIT License](https://img.shields.io/badge/license-MIT-green)
+
+## Features
+
+- **Wildcard Search**: Supports flexible pattern matching.
+- **Cross-Context Support**: Works with objects, JSON, and the DOM.
+- **Lightweight**: Minimal dependencies for faster performance.
+
 ## Installation
 
 Install the package via npm:
@@ -10,22 +18,25 @@ Install the package via npm:
 npm install --save-dev https://github.com/JustinLawrenceMS/somewhat 
 ```
 
-## Usage
-
-### Importing the Package
-
-Use the following import statement in an ESModule-compatible environment:
+## Quick Start
 
 ```javascript
 import Somewhat from "somewhat";
+
+const obj = { a: "apple", b: "banana" };
+const searcher = new Somewhat();
+const results = searcher.searchObject(obj, "a*");
+
+console.log(results); // Output: [ { path: "a", value: "apple" } ]
 ```
+
+## Usage
 
 ### Searching Objects
 
 You can use `Somewhat` to search JavaScript objects:
 
 ```javascript
-const searcher = new Somewhat();
 const obj = {
   a: "apple",
   b: "banana",
@@ -42,13 +53,7 @@ console.log(results);
 Search the DOM for elements matching a wildcard pattern:
 
 ```javascript
-// Assuming the DOM contains:
-// <div id="test-container">
-//   <p class="test-class">Hello, world!</p>
-//   <span data-attr="test">Some text</span>
-// </div>
-
-const results = searcher.searchDOM(document.body, "*-attr");
+const results = searcher.searchDOM(document.body, "data-*");
 console.log(results);
 // Output: [ { path: ".children[0].children[1]@data-attr", value: "test" } ]
 ```
@@ -89,7 +94,14 @@ Run the tests using Jest:
 npm test
 ```
 
+## Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request.
+
+## Support
+
+If you encounter issues, please open an issue on [GitHub](https://github.com/JustinLawrenceMS/somewhat/issues).
+
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
-

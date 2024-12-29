@@ -1,5 +1,5 @@
 /**
- * Somewhat.js
+ * portable/Somewhat.js - copy and paste into console or into a script tag in an HTML document.
  * A helper for recursively searching through objects and DOM elements.
  * Officially created by Justin Lawrence, MS, but actually created by our chatbot overlords.
  * Licensed under the GNU General Public License v2.0.
