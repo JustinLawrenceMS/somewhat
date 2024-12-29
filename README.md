@@ -89,14 +89,6 @@ Run the tests using Jest:
 npm test
 ```
 
-## Build
-
-To build the package for both CommonJS and ESM:
-
-```bash
-npm run build
-```
-
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
