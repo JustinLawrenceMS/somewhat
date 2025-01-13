@@ -105,3 +105,7 @@ If you encounter issues, please open an issue on [GitHub](https://github.com/Jus
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Donate
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/donate/?business=XL47W3LL7V2A2&no_recurring=0&item_name=Buy+a+WordPress+developer+a+coffee.+This+is+100+percent+optional.&currency_code=USD)
