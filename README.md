@@ -1,5 +1,7 @@
 # Somewhat
 
+⚠️ Security context: This package is designed for detecting leaked credentials and sensitive data. It is maintained as an internal security utility.
+
 Somewhat is a lightweight utility package that simplifies wildcard searches in JavaScript objects, DOM elements, and JSON. This package is ideal for developers who need quick and effective searching capabilities in their applications.
 
 ![npm version](https://img.shields.io/npm/v/somewhat) ![MIT License](https://img.shields.io/badge/license-MIT-green)
